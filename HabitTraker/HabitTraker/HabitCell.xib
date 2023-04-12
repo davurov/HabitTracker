@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="KGk-i7-Jjw" customClass="HabitCell" customModule="HabitTraker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOe-A5-bfR">
+                        <rect key="frame" x="5" y="5" width="343" height="84"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Aa-xJ-L7r">
+                                <rect key="frame" x="10" y="11" width="64" height="62.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Aa-xJ-L7r" secondAttribute="height" id="Upv-Jt-ZYV"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CB1-qx-9R4">
+                                <rect key="frame" x="94" y="21.666666666666671" width="50" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-lL-BOk">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-w2-KGs">
+                                        <rect key="frame" x="0.0" y="24" width="50" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rFe-En-xYh">
+                                <rect key="frame" x="10" y="77" width="323" height="5"/>
+                                <color key="tintColor" red="0.0" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="DXg-27-Lql"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.8615539965986394" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Aa-xJ-L7r" firstAttribute="leading" secondItem="dOe-A5-bfR" secondAttribute="leading" constant="10" id="DaF-mK-scN"/>
+                            <constraint firstItem="1Aa-xJ-L7r" firstAttribute="top" secondItem="dOe-A5-bfR" secondAttribute="top" constant="10" id="SdE-d4-8VH"/>
+                            <constraint firstAttribute="bottom" secondItem="1Aa-xJ-L7r" secondAttribute="bottom" constant="10" id="hCT-NM-Ld1"/>
+                            <constraint firstItem="CB1-qx-9R4" firstAttribute="leading" secondItem="1Aa-xJ-L7r" secondAttribute="trailing" constant="20" id="iGE-Ai-IS6"/>
+                            <constraint firstItem="CB1-qx-9R4" firstAttribute="centerY" secondItem="1Aa-xJ-L7r" secondAttribute="centerY" id="oPh-OO-cMO"/>
+                            <constraint firstAttribute="bottom" secondItem="rFe-En-xYh" secondAttribute="bottom" constant="2" id="prx-gP-rZX"/>
+                            <constraint firstAttribute="trailing" secondItem="rFe-En-xYh" secondAttribute="trailing" constant="10" id="uIJ-3E-5i0"/>
+                            <constraint firstItem="rFe-En-xYh" firstAttribute="leading" secondItem="dOe-A5-bfR" secondAttribute="leading" constant="10" id="zLG-3L-YpY"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="dOe-A5-bfR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="2EY-R5-u0W"/>
+                    <constraint firstAttribute="trailing" secondItem="dOe-A5-bfR" secondAttribute="trailing" constant="5" id="7pH-20-05l"/>
+                    <constraint firstItem="dOe-A5-bfR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="9tN-Ws-aSk"/>
+                    <constraint firstAttribute="bottom" secondItem="dOe-A5-bfR" secondAttribute="bottom" constant="5" id="FGF-WO-AEm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descLbl" destination="VH3-w2-KGs" id="HHc-xU-b27"/>
+                <outlet property="progressView" destination="rFe-En-xYh" id="BRk-eE-MgT"/>
+                <outlet property="statusImg" destination="1Aa-xJ-L7r" id="V43-N4-xb5"/>
+                <outlet property="titleLbl" destination="rcP-lL-BOk" id="P59-Bq-1zq"/>
+            </connections>
+            <point key="canvasLocation" x="64.885496183206101" y="41.549295774647888"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="123"/>
+    </resources>
+</document>
