@@ -6,25 +6,45 @@
 //
 
 import UIKit
+import CoreData
 
 class HabbitTracker: UIViewController {
     
     let date = Date()
     let calendar = Calendar.current
-    var firstDay = 0
-    var day = 0
-    
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // Reference to managed object context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    // Data for collectionView
+    var items: [Habit]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .gray
+        
         title = "Habit calendar"
-        day = UserDefaults.standard.integer(forKey: "day")
+        // Get items from core data
+        fetchHabbit()
     }
+    
+    func fetchHabbit() {
+        // fetch the date from core data to diplay in collview
+        do {
+            self.items = try context.fetch(Habit.fetchRequest())
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        } catch {
+            
+        }
+        
+    }
+    
     
     func setUpCollectionView() {
         collectionView.delegate = self
@@ -32,44 +52,28 @@ class HabbitTracker: UIViewController {
         collectionView.register( UICollectionViewCell.self, forCellWithReuseIdentifier: "default")
     }
     
-    func setCellWidthHeight() {
-        let width = collectionView.frame.size.width / 9
-        let height = collectionView.frame.size.height / 10
-        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.itemSize = CGSize(width: width, height: height)
-    }
-    
-    
     @IBAction func donePressed(_ sender: Any) {
         
-        if day == 0 {
-            UserDefaults.standard.set(calendar.component(.day, from: date), forKey: "startedDay")
-            let targetCell = collectionView.cellForItem(at: IndexPath(row: 0, section: 0))
-            targetCell?.backgroundColor = .systemGreen
-            //To-Do adda days to CoreData
-        } else {
-            var index = day - UserDefaults.standard.integer(forKey: "startedDay")
-            for i in 0...9 {
+        
+    }
+    
+    func markedDay(day: Int) {
+        var index = 0
+        for i in 0...9 {
+            
+            for j in 0...8 {
                 
-                for j in 0...8 {
-                    
-                    if index == 0 {
-                        print(i,j)
-                        let cell = collectionView.cellForItem(at: IndexPath(row: j, section: i))
-                        cell?.backgroundColor = .systemGreen
-                    } else if index < 0 {
-                        return
-                    }
-                    index -= 1
-                    
+                if index == 0 {
+                    print(i,j)
+                    let cell = collectionView.cellForItem(at: IndexPath(row: j, section: i))
+                    cell?.backgroundColor = .systemGreen
+                } else if index < 0 {
+                    return
                 }
+                index -= 1
+                
             }
         }
-        if day != calendar.component(.day, from: date) {
-            day = calendar.component(.day, from: date)
-            UserDefaults.standard.set(day, forKey: "day")
-        }
-        
     }
     
 }

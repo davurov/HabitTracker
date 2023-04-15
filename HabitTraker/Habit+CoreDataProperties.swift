@@ -2,7 +2,7 @@
 //  Habit+CoreDataProperties.swift
 //  HabitTraker
 //
-//  Created by Abduraxmon on 12/04/23.
+//  Created by Abduraxmon on 15/04/23.
 //
 //
 
@@ -21,7 +21,7 @@ extension Habit {
     @NSManaged public var desc: String?
     @NSManaged public var id: Int64
     @NSManaged public var title: String?
-    @NSManaged public var type: Int64
+    @NSManaged public var type: String?
 
 }
 

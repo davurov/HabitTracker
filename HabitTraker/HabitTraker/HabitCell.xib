@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,23 +20,30 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOe-A5-bfR">
                         <rect key="frame" x="5" y="5" width="343" height="84"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Aa-xJ-L7r">
-                                <rect key="frame" x="10" y="11" width="64" height="62.666666666666671"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAS-u3-f9z">
+                                <rect key="frame" x="10" y="17" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Aa-xJ-L7r" secondAttribute="height" id="Upv-Jt-ZYV"/>
+                                    <constraint firstAttribute="height" constant="50" id="A5B-3e-OVZ"/>
+                                    <constraint firstAttribute="width" constant="50" id="djH-hC-tRq"/>
                                 </constraints>
-                            </imageView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CB1-qx-9R4">
-                                <rect key="frame" x="94" y="21.666666666666671" width="50" height="41"/>
+                                <rect key="frame" x="80" y="5" width="253" height="67"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-lL-BOk">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-lL-BOk">
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="50"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-w2-KGs">
-                                        <rect key="frame" x="0.0" y="24" width="50" height="17"/>
+                                        <rect key="frame" x="0.0" y="50" width="253" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,14 +60,15 @@
                         </subviews>
                         <color key="backgroundColor" white="0.8615539965986394" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1Aa-xJ-L7r" firstAttribute="leading" secondItem="dOe-A5-bfR" secondAttribute="leading" constant="10" id="DaF-mK-scN"/>
-                            <constraint firstItem="1Aa-xJ-L7r" firstAttribute="top" secondItem="dOe-A5-bfR" secondAttribute="top" constant="10" id="SdE-d4-8VH"/>
-                            <constraint firstAttribute="bottom" secondItem="1Aa-xJ-L7r" secondAttribute="bottom" constant="10" id="hCT-NM-Ld1"/>
-                            <constraint firstItem="CB1-qx-9R4" firstAttribute="leading" secondItem="1Aa-xJ-L7r" secondAttribute="trailing" constant="20" id="iGE-Ai-IS6"/>
-                            <constraint firstItem="CB1-qx-9R4" firstAttribute="centerY" secondItem="1Aa-xJ-L7r" secondAttribute="centerY" id="oPh-OO-cMO"/>
+                            <constraint firstItem="rFe-En-xYh" firstAttribute="top" secondItem="CB1-qx-9R4" secondAttribute="bottom" constant="5" id="4HN-Sp-fAP"/>
+                            <constraint firstAttribute="trailing" secondItem="CB1-qx-9R4" secondAttribute="trailing" constant="10" id="BZJ-3W-dZb"/>
+                            <constraint firstItem="AAS-u3-f9z" firstAttribute="leading" secondItem="dOe-A5-bfR" secondAttribute="leading" constant="10" id="T7R-gJ-jiE"/>
+                            <constraint firstItem="CB1-qx-9R4" firstAttribute="leading" secondItem="AAS-u3-f9z" secondAttribute="trailing" constant="20" id="mh4-tO-45Z"/>
                             <constraint firstAttribute="bottom" secondItem="rFe-En-xYh" secondAttribute="bottom" constant="2" id="prx-gP-rZX"/>
+                            <constraint firstItem="AAS-u3-f9z" firstAttribute="centerY" secondItem="dOe-A5-bfR" secondAttribute="centerY" id="pv9-AV-MlW"/>
                             <constraint firstAttribute="trailing" secondItem="rFe-En-xYh" secondAttribute="trailing" constant="10" id="uIJ-3E-5i0"/>
                             <constraint firstItem="rFe-En-xYh" firstAttribute="leading" secondItem="dOe-A5-bfR" secondAttribute="leading" constant="10" id="zLG-3L-YpY"/>
+                            <constraint firstItem="CB1-qx-9R4" firstAttribute="top" secondItem="dOe-A5-bfR" secondAttribute="top" constant="5" id="zwA-Xg-3eJ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -80,13 +89,15 @@
             <connections>
                 <outlet property="descLbl" destination="VH3-w2-KGs" id="HHc-xU-b27"/>
                 <outlet property="progressView" destination="rFe-En-xYh" id="BRk-eE-MgT"/>
-                <outlet property="statusImg" destination="1Aa-xJ-L7r" id="V43-N4-xb5"/>
                 <outlet property="titleLbl" destination="rcP-lL-BOk" id="P59-Bq-1zq"/>
+                <outlet property="typeView" destination="AAS-u3-f9z" id="wyS-m2-EHi"/>
             </connections>
             <point key="canvasLocation" x="64.885496183206101" y="41.549295774647888"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

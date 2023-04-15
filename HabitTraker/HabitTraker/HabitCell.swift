@@ -10,13 +10,15 @@ import UIKit
 class HabitCell: UITableViewCell {
     
     
-    @IBOutlet weak var statusImg: UIImageView!
+    @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -6,16 +6,36 @@
 //
 
 import UIKit
+import CoreData
 
 class MainVC: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
+    // Reference to managed object context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    // Data for collectionView
+    var items: [Habit]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Habit tracker"
         setUpTableView()
+        fetchHabbit()
+    }
+    
+    func fetchHabbit() {
+        // fetch the date from core data to diplay in collview
+        do {
+            self.items = try context.fetch(Habit.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableview.reloadData()
+            }
+        } catch {
+            
+        }
     }
     
     func setUpTableView() {
@@ -24,6 +44,10 @@ class MainVC: UIViewController {
         tableview.delegate = self
         tableview.register(UINib(nibName:"HabitCell" , bundle: nil), forCellReuseIdentifier: "cell")
     }
+    
+    @objc func refresh() {
+       fetchHabbit()
+   }
     
     @IBAction func addHabbit(_ sender: Any) {
         let vc = AddTaskVC(nibName: "AddTaskVC" , bundle: nil)
@@ -34,11 +58,26 @@ class MainVC: UIViewController {
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HabitCell
+        let item = items![indexPath.row]
+        cell.titleLbl.text = item.title
+        cell.descLbl.text = item.desc
+        switch item.type {
+        case "Other":
+            cell.typeView.backgroundColor = .systemGray
+        case "Study":
+            cell.typeView.backgroundColor = UIColor.systemRed
+        case "Finance":
+            cell.typeView.backgroundColor = .systemYellow
+        case "Health":
+            cell.typeView.backgroundColor = .systemGreen
+        default:
+            cell.typeView.backgroundColor = .systemGray
+        }
         
         return cell
     }
