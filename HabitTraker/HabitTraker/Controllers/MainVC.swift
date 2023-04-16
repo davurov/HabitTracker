@@ -90,6 +90,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableview.deselectRow(at: indexPath, animated: true)
         let vc = HabbitTracker(nibName: "HabbitTracker", bundle: nil)
+        vc.tableIndex = indexPath.row
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -12,6 +12,8 @@ class HabbitTracker: UIViewController {
     
     let date = Date()
     let calendar = Calendar.current
+    var tableIndex = 0
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -26,10 +28,34 @@ class HabbitTracker: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .gray
-        
         title = "Habit calendar"
         // Get items from core data
         fetchHabbit()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        check()
+        
+    }
+    
+    func check() {
+        guard let item = items?[tableIndex].days else {
+            return
+        }
+        
+        if item.count != 0 {
+            let count = Int(item.last!)
+            
+            for day in 0...count {
+                if item.contains(Int64(day)) {
+                    markedDay(day: day, done: true)
+                } else {
+                    markedDay(day: day, done: false)
+                }
+            }
+        }
     }
     
     func fetchHabbit() {
@@ -53,23 +79,52 @@ class HabbitTracker: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
+        let day = Int64(22)
+        let item = items![tableIndex]
+        var index = 0
         
+        if item.startingDay == 0 {
+            item.startingDay = day
+            item.days.append(0)
+            markedDay(day: 0, done: true)
+        } else if item.startingDay < day, (item.startingDay + item.days.last!) != day {
+            index = Int(day - item.startingDay)
+            markedDay(day: index, done: true)
+            item.days.append(Int64(index))
+        } else if item.startingDay > day, item.days.last != day {
+            index = Int(day - item.startingDay) + 30
+            markedDay(day: index, done: true)
+            item.days.append(Int64(index))
+        } else if item.startingDay == day , item.days.count != 1 {
+            
+        }
         
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        check()
     }
     
-    func markedDay(day: Int) {
-        var index = 0
+    func markedDay(day: Int, done: Bool) {
+        var index = day
         for i in 0...9 {
             
             for j in 0...8 {
                 
                 if index == 0 {
-                    print(i,j)
                     let cell = collectionView.cellForItem(at: IndexPath(row: j, section: i))
-                    cell?.backgroundColor = .systemGreen
+                    if done {
+                        cell?.backgroundColor = .systemGreen
+                    } else {
+                        cell?.backgroundColor = .systemPink
+                    }
                 } else if index < 0 {
                     return
                 }
+                
                 index -= 1
                 
             }

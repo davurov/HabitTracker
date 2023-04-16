@@ -2,7 +2,7 @@
 //  Habit+CoreDataProperties.swift
 //  HabitTraker
 //
-//  Created by Abduraxmon on 15/04/23.
+//  Created by Abduraxmon on 16/04/23.
 //
 //
 
@@ -16,8 +16,8 @@ extension Habit {
         return NSFetchRequest<Habit>(entityName: "Habit")
     }
 
-    @NSManaged public var days: NSObject?
-    @NSManaged public var deletedDate: Date?
+    @NSManaged public var days: [Int64]
+    @NSManaged public var startingDay: Int64
     @NSManaged public var desc: String?
     @NSManaged public var id: Int64
     @NSManaged public var title: String?
