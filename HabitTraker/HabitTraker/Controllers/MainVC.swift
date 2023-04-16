@@ -87,6 +87,30 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+       // Create swipe action
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, complitionHandler) in
+            // Which habit remove
+            let habitToRemove = self.items![indexPath.row]
+            // Remove habit
+            self.context.delete(habitToRemove)
+            // Save data
+            do {
+                try self.context.save()
+            } catch {
+                
+            }
+            // Fetch Data
+            self.fetchHabbit()
+        }
+        
+        action.backgroundColor = .red
+        action.image = UIImage(systemName: "trash")
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableview.deselectRow(at: indexPath, animated: true)
         let vc = HabbitTracker(nibName: "HabbitTracker", bundle: nil)

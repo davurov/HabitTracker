@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3E311129EC8BAF00DA6CC1 /* HabitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E311029EC8BAE00DA6CC1 /* HabitCell.xib */; };
 		3D77EB8929E5F9D400D324FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77EB8829E5F9D400D324FD /* AppDelegate.swift */; };
 		3D77EB9329E5F9D400D324FD /* HabitTraker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D77EB9129E5F9D400D324FD /* HabitTraker.xcdatamodeld */; };
 		3D77EB9529E5F9D500D324FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D77EB9429E5F9D500D324FD /* Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		3D77EBA129E5FA1900D324FD /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77EB9F29E5FA1900D324FD /* MainVC.swift */; };
 		3D77EBA229E5FA1900D324FD /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D77EBA029E5FA1900D324FD /* MainVC.xib */; };
 		3D77EBA929E6071F00D324FD /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77EBA729E6071F00D324FD /* HabitCell.swift */; };
-		3D77EBAA29E6071F00D324FD /* HabitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D77EBA829E6071F00D324FD /* HabitCell.xib */; };
 		3D77EBAD29E69E8100D324FD /* AddTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77EBAB29E69E8100D324FD /* AddTaskVC.swift */; };
 		3D77EBAE29E69E8100D324FD /* AddTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D77EBAC29E69E8100D324FD /* AddTaskVC.xib */; };
 		3D77EBB329E6A77D00D324FD /* HabbitTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77EBB129E6A77D00D324FD /* HabbitTypeVC.swift */; };
@@ -26,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D3E311029EC8BAE00DA6CC1 /* HabitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HabitCell.xib; sourceTree = "<group>"; };
 		3D77EB8529E5F9D400D324FD /* HabitTraker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTraker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D77EB8829E5F9D400D324FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D77EB9229E5F9D400D324FD /* HabitTraker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTraker.xcdatamodel; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		3D77EB9F29E5FA1900D324FD /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		3D77EBA029E5FA1900D324FD /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		3D77EBA729E6071F00D324FD /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
-		3D77EBA829E6071F00D324FD /* HabitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HabitCell.xib; path = ../HabitCell.xib; sourceTree = "<group>"; };
 		3D77EBAB29E69E8100D324FD /* AddTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskVC.swift; sourceTree = "<group>"; };
 		3D77EBAC29E69E8100D324FD /* AddTaskVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTaskVC.xib; sourceTree = "<group>"; };
 		3D77EBB129E6A77D00D324FD /* HabbitTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbitTypeVC.swift; sourceTree = "<group>"; };
@@ -69,9 +69,9 @@
 		3D3E310E29EC8B3100DA6CC1 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3D77EB8829E5F9D400D324FD /* AppDelegate.swift */,
 				3D77EB9429E5F9D500D324FD /* Assets.xcassets */,
 				3D77EB9629E5F9D500D324FD /* LaunchScreen.storyboard */,
-				3D77EB9929E5F9D500D324FD /* Info.plist */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -103,6 +103,7 @@
 		3D77EB8729E5F9D400D324FD /* HabitTraker */ = {
 			isa = PBXGroup;
 			children = (
+				3D77EB9929E5F9D500D324FD /* Info.plist */,
 				3D3E310D29EC8B0B00DA6CC1 /* Model */,
 				3DFA281529EC8AD000BD2F25 /* Controllers */,
 				3DFA281629EC8ADE00BD2F25 /* New Group */,
@@ -115,7 +116,6 @@
 		3DFA281529EC8AD000BD2F25 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3D77EB8829E5F9D400D324FD /* AppDelegate.swift */,
 				3D77EB9F29E5FA1900D324FD /* MainVC.swift */,
 				3D77EBB929E6B43F00D324FD /* HabbitTracker.swift */,
 				3D77EBA729E6071F00D324FD /* HabitCell.swift */,
@@ -132,7 +132,7 @@
 				3D77EBA029E5FA1900D324FD /* MainVC.xib */,
 				3D77EBAC29E69E8100D324FD /* AddTaskVC.xib */,
 				3D77EBB229E6A77D00D324FD /* HabbitTypeVC.xib */,
-				3D77EBA829E6071F00D324FD /* HabitCell.xib */,
+				3D3E311029EC8BAE00DA6CC1 /* HabitCell.xib */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 				3D77EBBC29E6B43F00D324FD /* HabbitTracker.xib in Resources */,
 				3D77EBA229E5FA1900D324FD /* MainVC.xib in Resources */,
 				3D77EB9829E5F9D500D324FD /* LaunchScreen.storyboard in Resources */,
-				3D77EBAA29E6071F00D324FD /* HabitCell.xib in Resources */,
 				3D77EB9529E5F9D500D324FD /* Assets.xcassets in Resources */,
+				3D3E311129EC8BAF00DA6CC1 /* HabitCell.xib in Resources */,
 				3D77EBAE29E69E8100D324FD /* AddTaskVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

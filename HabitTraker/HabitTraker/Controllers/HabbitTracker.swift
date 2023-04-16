@@ -79,7 +79,7 @@ class HabbitTracker: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        let day = Int64(22)
+        let day = Int64(calendar.component(.day, from: date))
         let item = items![tableIndex]
         var index = 0
         
