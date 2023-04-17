@@ -128,8 +128,8 @@
 		3DFA281629EC8ADE00BD2F25 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				3D77EBBA29E6B43F00D324FD /* HabbitTracker.xib */,
 				3D77EBA029E5FA1900D324FD /* MainVC.xib */,
+				3D77EBBA29E6B43F00D324FD /* HabbitTracker.xib */,
 				3D77EBAC29E69E8100D324FD /* AddTaskVC.xib */,
 				3D77EBB229E6A77D00D324FD /* HabbitTypeVC.xib */,
 				3D3E311029EC8BAE00DA6CC1 /* HabitCell.xib */,

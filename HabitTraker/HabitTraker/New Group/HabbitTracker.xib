@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HabbitTracker" customModule="HabitTraker" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="i2B-og-mYb" id="cF1-4X-RZo"/>
+                <outlet property="counterLbl" destination="5fN-8N-ftU" id="gT1-hu-C4o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -52,6 +53,12 @@
                         <action selector="donePressed:" destination="-1" eventType="touchUpInside" id="83U-nZ-Bn3"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fN-8N-ftU">
+                    <rect key="frame" x="161.66666666666666" y="145" width="70" height="36"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -60,7 +67,9 @@
                 <constraint firstItem="F2e-8r-mtB" firstAttribute="top" secondItem="i2B-og-mYb" secondAttribute="bottom" constant="30" id="GT5-tq-URr"/>
                 <constraint firstItem="i2B-og-mYb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JTn-2g-vdP"/>
                 <constraint firstItem="i2B-og-mYb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XR4-gF-ySm"/>
+                <constraint firstItem="5fN-8N-ftU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cpN-ib-j1o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i2B-og-mYb" secondAttribute="trailing" id="o7V-8t-gKP"/>
+                <constraint firstItem="i2B-og-mYb" firstAttribute="top" secondItem="5fN-8N-ftU" secondAttribute="bottom" constant="20" id="olp-Zx-AZC"/>
                 <constraint firstItem="i2B-og-mYb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qOf-Ub-0xu"/>
             </constraints>
             <point key="canvasLocation" x="102" y="20"/>

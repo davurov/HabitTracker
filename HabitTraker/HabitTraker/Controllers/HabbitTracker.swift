@@ -10,6 +10,7 @@ import CoreData
 
 class HabbitTracker: UIViewController {
     
+    @IBOutlet weak var counterLbl: UILabel!
     let date = Date()
     let calendar = Calendar.current
     var tableIndex = 0
@@ -28,16 +29,18 @@ class HabbitTracker: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .gray
-        title = "Habit calendar"
+        
         // Get items from core data
         fetchHabbit()
+        
+        reloadCounter()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         check()
-        
+        reloadCounter()
     }
     
     func check() {
@@ -79,22 +82,25 @@ class HabbitTracker: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        let day = Int64(calendar.component(.day, from: date))
+        let day = Int64(27)
         let item = items![tableIndex]
         var index = 0
         
         if item.startingDay == 0 {
             item.startingDay = day
             item.days.append(0)
+            reloadCounter()
             markedDay(day: 0, done: true)
         } else if item.startingDay < day, (item.startingDay + item.days.last!) != day {
             index = Int(day - item.startingDay)
             markedDay(day: index, done: true)
             item.days.append(Int64(index))
+            reloadCounter()
         } else if item.startingDay > day, item.days.last != day {
             index = Int(day - item.startingDay) + 30
             markedDay(day: index, done: true)
             item.days.append(Int64(index))
+            reloadCounter()
         } else if item.startingDay == day , item.days.count != 1 {
             
         }
@@ -106,6 +112,10 @@ class HabbitTracker: UIViewController {
         }
         
         check()
+    }
+    
+    func reloadCounter() {
+        counterLbl.text = "\(String(describing: items![tableIndex].days.count))/90"
     }
     
     func markedDay(day: Int, done: Bool) {

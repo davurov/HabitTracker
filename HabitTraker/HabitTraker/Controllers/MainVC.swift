@@ -115,6 +115,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         tableview.deselectRow(at: indexPath, animated: true)
         let vc = HabbitTracker(nibName: "HabbitTracker", bundle: nil)
         vc.tableIndex = indexPath.row
+        vc.title = items?[indexPath.row].title
         navigationController?.pushViewController(vc, animated: true)
     }
     

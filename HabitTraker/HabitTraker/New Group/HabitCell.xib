@@ -34,40 +34,33 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CB1-qx-9R4">
-                                <rect key="frame" x="80" y="5" width="253" height="67"/>
+                                <rect key="frame" x="80" y="5" width="253" height="74"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-lL-BOk">
                                         <rect key="frame" x="0.0" y="0.0" width="253" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jIL-Yh-pxa"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-w2-KGs">
-                                        <rect key="frame" x="0.0" y="50" width="253" height="17"/>
+                                        <rect key="frame" x="0.0" y="50" width="253" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rFe-En-xYh">
-                                <rect key="frame" x="10" y="77" width="323" height="5"/>
-                                <color key="tintColor" red="0.0" green="0.78039215689999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="DXg-27-Lql"/>
-                                </constraints>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="0.8615539965986394" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rFe-En-xYh" firstAttribute="top" secondItem="CB1-qx-9R4" secondAttribute="bottom" constant="5" id="4HN-Sp-fAP"/>
                             <constraint firstAttribute="trailing" secondItem="CB1-qx-9R4" secondAttribute="trailing" constant="10" id="BZJ-3W-dZb"/>
                             <constraint firstItem="AAS-u3-f9z" firstAttribute="leading" secondItem="dOe-A5-bfR" secondAttribute="leading" constant="10" id="T7R-gJ-jiE"/>
+                            <constraint firstItem="CB1-qx-9R4" firstAttribute="centerY" secondItem="dOe-A5-bfR" secondAttribute="centerY" id="Zke-0B-wmm"/>
                             <constraint firstItem="CB1-qx-9R4" firstAttribute="leading" secondItem="AAS-u3-f9z" secondAttribute="trailing" constant="20" id="mh4-tO-45Z"/>
-                            <constraint firstAttribute="bottom" secondItem="rFe-En-xYh" secondAttribute="bottom" constant="2" id="prx-gP-rZX"/>
                             <constraint firstItem="AAS-u3-f9z" firstAttribute="centerY" secondItem="dOe-A5-bfR" secondAttribute="centerY" id="pv9-AV-MlW"/>
-                            <constraint firstAttribute="trailing" secondItem="rFe-En-xYh" secondAttribute="trailing" constant="10" id="uIJ-3E-5i0"/>
-                            <constraint firstItem="rFe-En-xYh" firstAttribute="leading" secondItem="dOe-A5-bfR" secondAttribute="leading" constant="10" id="zLG-3L-YpY"/>
                             <constraint firstItem="CB1-qx-9R4" firstAttribute="top" secondItem="dOe-A5-bfR" secondAttribute="top" constant="5" id="zwA-Xg-3eJ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -88,7 +81,6 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descLbl" destination="VH3-w2-KGs" id="HHc-xU-b27"/>
-                <outlet property="progressView" destination="rFe-En-xYh" id="BRk-eE-MgT"/>
                 <outlet property="titleLbl" destination="rcP-lL-BOk" id="P59-Bq-1zq"/>
                 <outlet property="typeView" destination="AAS-u3-f9z" id="wyS-m2-EHi"/>
             </connections>
